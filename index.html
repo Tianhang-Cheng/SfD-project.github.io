@@ -6,7 +6,7 @@
 
   <!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
 
-  <title>UrbanIR</title>
+  <title>SfD</title>
 
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,8 +79,11 @@
   <div class="container" id="header" style="text-align: center; margin: auto;">
     <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
       <h1 class="col-md-12 text-center" id="title">
-        <b>UrbanIR</b>: Large-Scale Urban Scene <br>Inverse Rendering from a Single Video<br>
+        <b>Structure from Duplicates</b>: <br>Neural Inverse Graphics from a Pile of Objects <br><br>
       </h1>
+      <h3>
+        <b>Neurips</b> 2023<br>
+      </h3>
     </div>
   </div>
   <script>
@@ -89,17 +92,15 @@
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 text-center">
         <ul class="list-inline">
-          <li> <a href="https://zhihao-lin.github.io/">Zhi-Hao Lin<sup>1</sup></a> </li>
-          <li> <a href="https://www.linkedin.com/in/bohanliu524/?locale=en_US">Bohan Liu<sup>1</sup></a> </li>
-          <li> <a href="https://jamie725.github.io/website/">Yi-Ting Chen<sup>2</sup></a> </li>
-          <li> <a href="http://luthuli.cs.uiuc.edu/~daf/">David Forsyth<sup>1</sup></a> </li><br />
-          <li> <a href="https://jbhuang0604.github.io/">Jia-Bin Huang<sup>2</sup></a> </li>
-          <li> <a href="https://anandbhattad.github.io/">Anand Bhattad<sup>1</sup></a> </li>
+          <li> <a href="https://tianhang-cheng.github.io/">Tianhang Cheng<sup>1</sup></a> </li>
+          <li> <a href="https://people.csail.mit.edu/weichium/">Wei-Chiu Ma<sup>2</sup></a> </li>
+          <li> <a href="http://faculty.nres.illinois.edu/~kaiyuguan/">Kaiyu Guan<sup>1</sup></a> </li><br />
+          <li> <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba<sup>2</sup></a> </li>
           <li> <a href="https://shenlong.web.illinois.edu/">Shenlong Wang<sup>1</sup></a> </li>
         </ul>
         <ul class="list-inline">
           <li> <sup>1</sup>University of Illinois at Urbana-Champaign </li>
-          <li> <sup>2</sup>University of Maryland, College Park </li>
+          <li> <sup>2</sup>Massachusetts Institute of Technology </li>
         </ul>
       </div>
     </div>
@@ -107,7 +108,7 @@
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <span class="link-block">
-          <a href="https://arxiv.org/abs/2306.09349" class="external-link button is-normal is-rounded is-dark">
+          <a href="https://openreview.net/forum?id=7irm2VJARb" class="external-link button is-normal is-rounded is-dark">
             <span class="icon">
               <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas"
                 data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
@@ -121,7 +122,7 @@
           </a>
         </span>
         <span class="link-block">
-          <a href="" class="external-link button is-normal is-rounded is-dark">
+          <a href="https://github.com/Tianhang-Cheng/SfD" class="external-link button is-normal is-rounded is-dark">
             <span class="icon">
               <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab"
                 data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
@@ -134,14 +135,17 @@
           </a>
         </span>
       </div>
-    </div>
+    </div> 
 
-    <div class="glide" id="dynamic-carousel">
+
+    <!-- <div class="glide" id="dynamic-carousel">
+      <source src="src/talk/1.mp4" type="video/mp4"/>
+      
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <li class="glide__slide">
             <video controls muted loop autoplay>
-              <source src="src/merge/1538.mp4" type="video/mp4"/>
+              <source src="src/talk/1.mp4" type="video/mp4"/>
             </video>
           </li>
           <li class="glide__slide">
@@ -177,16 +181,16 @@
         <span class="glide__bullet" data-glide-dir="=3"></span>
         <span class="glide__bullet" data-glide-dir="=4"></span>
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-sm-10 col-sm-offset-1 text-center">
-        Reconstruction, Normal, Albedo, Shading, Visibility, Semantics
-        <!-- <img src="./src/images/teaser.png" class="img-responsive" alt="overview" width="100%"
-            style="max-height: 450px;margin:auto;"> -->
+        Reconstruction, Normal, Albedo, Shading, Visibility from a Single Image.
+        <img src="./src/images/teaser.png" class="img-responsive" alt="overview" width="100%"
+            style="max-height: 450px;margin:auto;">
       </div>
-    </div>
+    </div> -->
 
 
     <div class="row">
@@ -195,18 +199,18 @@
             Abstract 
         </h3>
         <div class="text-justify">
-            We show how to build a model that allows realistic, free-viewpoint renderings of a scene under novel
-            lighting conditions from video. Our method -- <b>UrbanIR</b>: Urban Scene Inverse Rendering --
-            computes an inverse graphics representation from the video. 
-            UrbanIR jointly infers shape, albedo, visibility, and sun and sky
-            illumination from <b>a single video of unbounded outdoor scenes</b> with unknown lighting.
-            UrbanIR uses videos from cameras mounted on cars (in contrast to many views of the same points in typical NeRF-style estimation).
-            As a result, standard methods produce poor geometry estimates (for example, roofs), and there are numerous ''floaters''.  
-            Errors in inverse graphics inference can result in strong rendering artifacts.
-            UrbanIR uses novel losses to control these and other sources of error. UrbanIR uses a novel loss to make very good
-            estimates of shadow volumes in the original scene.  The resulting representations facilitate controllable
-            editing, delivering photorealistic free-viewpoint renderings of relit scenes and inserted objects.  Qualitative
-            evaluation demonstrates strong improvements over the state-of-the-art.
+          Our world is full of identical objects (e.g., cans of coke, cars of same model).
+          These duplicates, when seen together, provide additional and strong cues for us to effectively reason about 3D.
+          Inspired by this observation, we introduce Structure from Duplicates (SfD), a novel inverse graphics framework that reconstructs geometry,
+          material, and illumination from a single image containing multiple identical objects.
+          SfD begins by identifying multiple instances of an object within an image,
+          and then jointly estimates the 6DoF pose for all instances.An inverse graphics pipeline is subsequently employed to jointly reason about the shape,
+          material of the object, and the environment light, while adhering to the shared geometry and material constraint across instances.
+          Our primary contributions involve utilizing object duplicates as a robust prior for single-image inverse graphics
+          and proposing an in-plane rotation-robust Structure from Motion (SfM) formulation for joint 6-DoF object pose estimation.
+          By leveraging multi-view cues from a single image, SfD generates more realistic and detailed 3D reconstructions,
+          significantly outperforming existing single image reconstruction models and
+          multi-view reconstruction approaches with a similar or greater number of observations.
         </div>
         <!-- <center>
           <img src="./src/images/rendering.png" class="img-responsive" alt="rendering" width="80%"
@@ -214,8 +218,26 @@
         </center> -->
       </div>
     </div>
-
+  
     <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h3>
+            Methods 
+        </h3>
+        <center>
+          <img src="./src/images/pipeline.png" class="img-responsive" alt="rendering" width="80%"
+            style="max-height: 450px;margin:auto;">
+        </center>
+        <div class="text-justify">
+          <b>Method overview</b>: (<b>Left</b>) SfD begins by identifying multiple instances of an object
+          within an image, and then jointly estimates the 6DoF pose for all instances. (<b>Right</b>) An inverse
+          graphics pipeline is subsequently employed to reason about the shape, material of the object, and the
+          environment light, while adhering to the shared geometry and material constraint across instances
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <h3>
           Intrinsic Decomposition
@@ -254,9 +276,9 @@
           </ul>
         </center>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h3>
             Relighting: Timelapse Simulation
@@ -276,9 +298,9 @@
             </video>
           </center>
         </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <h3>
           Object Insertion
@@ -302,9 +324,9 @@
           </div>
         </center>
       </div>
-  </div>
+  </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h3>
             Relighting: Night Simulation
@@ -334,6 +356,19 @@
             </div>
           </center>
         </div>
+    </div> -->
+
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h3>
+          Talk
+        </h3>
+        <video width="960" height="540" controls>
+          <source src="src/talk/1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
 
     <div class="row">
@@ -350,6 +385,7 @@
 
       </div>
     </div>
+
   </div>
 </body>
 
